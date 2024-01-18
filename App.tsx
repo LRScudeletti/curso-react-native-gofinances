@@ -1,6 +1,15 @@
 import React from 'react';
-import { Dashboard } from './src/Components/screens/Dashboard'
+import { ThemeProvider } from 'styled-components';
+
+import theme from './src/global/styles/theme';
+
+import { Dashboard } from './src/screens/Components/Dashboard';
 
 export default function App() {
-  return <Dashboard />
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Dashboard />
+    </ThemeProvider>
+  )
 }
