@@ -8,14 +8,49 @@ import {
   UserInfo,
   Photo,
   User,
-  UserGretting,
+  UserGreeting,
   Username,
   Icon,
-  HighlightCards
+  HighlightCards,
+  Transactions,
+  Title,
+  TransactionList
 } from './styles'
 import { HighlightCard } from '../../components/HighlightCard';
+import { TransactionCard } from '../../components/TransactionCard';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
 
 export function Dashboard() {
+  const data = [
+    {
+      title: 'Desenvolvimento de site',
+      amount: 'R$ 12.000,00',
+      category: {
+        name: 'Vendas',
+        icon: 'dollar-sign',
+      },
+      date: '13/04/2020'
+    },
+    {
+      title: 'Desenvolvimento de site',
+      amount: 'R$ 12.000,00',
+      category: {
+        name: 'Vendas',
+        icon: 'dollar-sign',
+      },
+      date: '13/04/2020'
+    },
+    {
+      title: 'Desenvolvimento de site',
+      amount: 'R$ 12.000,00',
+      category: {
+        name: 'Vendas',
+        icon: 'dollar-sign',
+      },
+      date: '13/04/2020'
+    }
+  ]
+
   return (
     <Container>
       <Header>
@@ -24,7 +59,7 @@ export function Dashboard() {
             <UserInfo>
               <Photo source={{ uri: 'https://avatars.githubusercontent.com/u/48210960?v=4' }} />
               <User>
-                <UserGretting>Olá,</UserGretting>
+                <UserGreeting>Olá,</UserGreeting>
                 <Username>Luiz Rogério</Username>
               </User>
             </UserInfo>
@@ -52,6 +87,20 @@ export function Dashboard() {
           lastTransaction='01 à 16 de Abril'
         />
       </HighlightCards>
+
+      <Transactions>
+
+        <Title>Listagem</Title>
+
+        <TransactionList
+          data={data}
+          renderItem={({ item }: any) => <TransactionCard data={item} />}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{
+            paddingBottom: getBottomSpace()
+          }}
+        />
+      </Transactions>
     </Container>
   )
 }

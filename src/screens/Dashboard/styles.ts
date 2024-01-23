@@ -45,7 +45,7 @@ export const User = styled.View`
   margin-left: 17px;
 `;
 
-export const UserGretting = styled.Text`
+export const UserGreeting = styled.Text`
   color: ${({ theme }: any) => theme.colors.shape};
   font-family: ${({ theme }: any) => theme.fonts.regular};
   font-size: ${RFValue(18)}px;
@@ -71,3 +71,18 @@ export const HighlightCards = styled.ScrollView.attrs({
   position: absolute;
   margin-top: ${RFPercentage(20)}px;
 `;
+
+export const Transactions = styled.View`
+  flex: 1%;
+  padding: 0 24px;
+
+  margin-top: ${RFPercentage(12)}px;
+`;
+
+export const Title = styled.Text`
+  font-size: ${RFValue(18)}px;
+  font-family: ${({ theme }: any) => theme.fonts.regular};
+  margin-bottom: 16px;
+`;
+
+export const TransactionList = styled.FlatList.attrs({})``;
